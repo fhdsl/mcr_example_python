@@ -19,21 +19,26 @@
 
 ## If you're in the middle of an analysis
 
+If you are the in the middle of analysis, you might not have had the chance to use `uv`, or you just learned about it. There is a path to making your analysis reproducible:
+
 1. Using `pip freeze > requirements.txt` will get you part of the way there, 
 2. Or in your notebook use:
 
 ```python
-session_info.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name="requirements.txt") 
+session_info.show(na=True, os=True, cpu=False, jupyter=None, 
+    dependencies=None,  write_req_file=True, 
+    req_file_name="requirements.txt") 
 ```
 
-using the `session-info` package (note that the package name is a hyphen, not an underscore, and module uses an underscore). This will create a `requirements.txt` file.
+using the `session-info` package (note that the package name is a hyphen, not an underscore, and module uses an underscore). This will create a `requirements.txt` file in your folder.
 
 3. Run `uv init` in terminal, which will create your `uv.lock` and your `.venv` directory. 
 4. Run `uv add -r requirements.txt` - this will install everything and modify your `uv.lock` file
 5. `git add .` and `git commit`. Push to GitHub using Github Desktop.
+6. Test it out by cloning and using the process above.
 
 ## Making The Project Binder Ready
 
-- I used the `quarto use binder` command after making this a quarto project, then committed everything.
+- I used the `quarto use binder` command after making this a quarto project using `quarto create project`, then committed everything.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fhdsl/mcr_example_python/HEAD)
