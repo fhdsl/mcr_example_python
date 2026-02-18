@@ -5,8 +5,8 @@
 3. Open in Positron / RStudio / VSCode
 4. Run `uv sync` in terminal 
 5. You may have to reopen the project to activate the environment for the notebook, or run `source .venv/bin/activate` in terminal
-6. Open the `ipynb` file, make sure that the right kernel is open (should be Python 13.2 with the name of your environment)
-7. Try running everything!
+6. Open the `ipynb` file, make sure that the right kernel is open (should be Python 13.2 with the name of your environment, which should be "(mcr_python)")
+7. Try running everything in the notebook!
 
 ## How I made this project
 
@@ -15,7 +15,7 @@
 3. Add packages using `uv add <package>` such as `uv add geopandas`
 4. `git init` to initialize a git repo
 5. `git add .` and `git commit -m "starting"`
-6. Publish to a remote using GitHub Publish.
+6. Publish to a remote using GitHub Desktop Publish.
 
 ## Making The Project Binder Ready
 
