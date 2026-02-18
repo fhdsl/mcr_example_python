@@ -17,7 +17,21 @@
 5. `git add .` and `git commit -m "starting"`
 6. Publish to a remote using GitHub Desktop Publish.
 
+## If you're in the middle of an analysis
+
+1. Using `pip freeze > requirements.txt` will get you part of the way there, 
+2. Or in your notebook use:
+
+```python
+session_info.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name="requirements.txt") 
+```
+using the `session-info` package (note that the package name is a hyphen, not an underscore, and module uses an underscore). This will create a `requirements.txt` file.
+3. Run `uv init` in terminal, which will create your `uv.lock` and your `.venv` directory. 
+4. Run `uv add -r requirements.txt` - this will install everything and modify your `uv.lock` file
+5. `git add .` and `git commit`. Push to GitHub using Github Desktop.
+
 ## Making The Project Binder Ready
 
+- I used the `quarto use binder` command after making this a quarto project, then committed everything.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fhdsl/mcr_example_python/HEAD)
